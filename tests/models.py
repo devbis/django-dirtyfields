@@ -139,8 +139,8 @@ class TestModelWithSpecifiedFieldsAndForeignKey2(TestModelWithSpecifiedFieldsAnd
 
 
 class TestModelWithM2MAndSpecifiedFields(DirtyFieldsMixin, models.Model):
-    m2m1 = models.ManyToManyField(TestModel)
-    m2m2 = models.ManyToManyField(TestModel)
+    m2m1 = models.ManyToManyField(TestModel, related_name='test1_models')
+    m2m2 = models.ManyToManyField(TestModel, related_name='test2_models')
     ENABLE_M2M_CHECK = True
     FIELDS_TO_CHECK = ['m2m1']
 
